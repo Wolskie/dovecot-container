@@ -16,7 +16,7 @@ RUN apk update \
  
  # Install dovecot
  && apk add --no-cache \
-    dovecot rsyslog supervisor ca-certificates \
+    dovecot dovecot-ldap dovecot-lmtpd dovecot-pop3d dovecot-pigeonhole-plugin rsyslog supervisor ca-certificates \
  && (rm "/tmp/"* 2>/dev/null || true) && (rm -rf /var/cache/apk/* 2>/dev/null || true)
 
 RUN mkdir -p /var/lib/dovecot && \
