@@ -15,4 +15,4 @@ RUN mkdir -p /var/lib/dovecot && \
 
 EXPOSE 110 143 993 995
 
-CMD ["dovecot", "-F"]
+CMD ["/sbin/dovecot", "-F"]
