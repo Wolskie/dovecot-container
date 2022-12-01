@@ -7,11 +7,11 @@ LABEL maintainer="Mark Hahl <mark@hahl.id.au>" \
       org.label-schema.vcs-url="https://github.com/mhahl/dovecot-container" \
       org.label-schema.schema-version="2.0"
 
-RUN dnf install --repofrompath=centos-appstream,http://mirror.stream.centos.org/9-stream/AppStream/x86_64/os/ --repofrompath=centos,http://mirror.stream.centos.org/9-stream/BaseOS/x86_64/os --disablerepo=* --enablerepo=centos dovecot --nobest && dnf clean all -y
+RUN dnf install --repofrompath=centos-appstream,http://mirror.stream.centos.org/9-stream/AppStream/x86_64/os/ --repofrompath=centos,http://mirror.stream.centos.org/9-stream/BaseOS/x86_64/os --disablerepo=* --enablerepo=centos centos-gpg-keys dovecot --nogpgcheck  -y --nobest
 
 RUN mkdir -p /var/lib/dovecot && \
     mkdir -p /var/log/dovecot && \
-    mkdir -p /run/dovecot
+    mkdir -p /run/dovecotu
 
 EXPOSE 110 143 993 995
 
